@@ -1,3 +1,4 @@
+// Comment
 class LinkedListCustom {
     Node head;
 
