@@ -2,8 +2,9 @@ public class Product {
     String productName;
     int quantity;
 
-    public Product(String productName) {
+    public Product(String productName, int quantity) {
         this.productName = productName;
+        this.quantity = quantity;
     }
 
     public String getProductName() {
@@ -20,5 +21,10 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void addProduct(String productName, int quantity) {
+        Product newProduct = new Product(productName, quantity);
+        InitializeProduct.productList.addLast(newProduct);
     }
 }

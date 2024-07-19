@@ -15,10 +15,32 @@ public class Menu {
 
         String userInput = myScanner.next();
 
-        if (Objects.equals(userInput, "2")) {
+        if (Objects.equals(userInput, "1")) {
+            System.out.println(); // Line break
+            System.out.print("Digite o nome do produto: ");
+            String productNameInput = myScanner.next();
+            System.out.print("Digite a quantidade para adicionar: ");
+            int productQuantityInput = myScanner.nextInt();
+            Product newUserProduct = new Product(productNameInput, productQuantityInput);
+            InitializeProduct.productList.addLast(newUserProduct);
+            System.out.println("\nProducto adicionado com sucesso!");
+        }
+
+        else if (Objects.equals(userInput, "2")) {
             System.out.println(); // Line break
             System.out.println("Produtos em estoque:");
             InitializeProduct.productList.print();
+        }
+
+        else if (Objects.equals(userInput, "4")) {
+            System.out.println(); // Line break
+            System.out.print("Digite o nome do produto: ");
+            String productNameInput = myScanner.next();
+            if (InitializeProduct.productList.checkIfExists(productNameInput) == true) {
+                System.out.println("O produto existe.");
+            } else {
+                System.out.println("O produto não existe.");
+            }
         }
     }
 }
