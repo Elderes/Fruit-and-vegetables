@@ -11,11 +11,14 @@ public class Menu {
         System.out.println("4. Pesquisar produto.");
         System.out.println("5. Sair.");
         System.out.println("=======================");
+        System.out.print("Digite o número da opção: ");
 
         String userInput = myScanner.next();
 
         if (Objects.equals(userInput, "2")) {
-            productList.print();
+            System.out.println(); // Line break
+            System.out.println("Produtos em estoque:");
+            InitializeProduct.productList.print();
         }
     }
 }
