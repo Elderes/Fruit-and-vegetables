@@ -40,7 +40,7 @@ class LinkedListCustom {
         boolean flag = false;
 
         while (curr != null) {
-            if (curr.value.getProductName() != product.toUpperCase()) {
+            if (!curr.value.getProductName().toUpperCase().equals(product.toUpperCase())) {
                 flag = false;
                 curr = curr.next;
             } else {
