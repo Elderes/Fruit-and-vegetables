@@ -50,4 +50,22 @@ class LinkedListCustom {
         }
         return flag;
     }
+
+    public boolean removeElement(String product, int quantity) {
+        Node curr = this.head;
+        boolean flag = false;
+
+        if (checkIfExists(product) == false) {
+            flag = false;
+        } else if (curr.value.getQuantity() <= 0) {
+            flag = false;
+        } else {
+            while (!curr.value.getProductName().toUpperCase().equals(product.toUpperCase())) {
+                curr = curr.next;
+            }
+            curr.value.setQuantity(curr.value.getQuantity() - quantity); // Fix negative numbers case. Maybe round?
+            flag = true;
+        }
+        return flag;
+    }
 }

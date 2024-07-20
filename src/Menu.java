@@ -32,15 +32,33 @@ public class Menu {
             InitializeProduct.productList.print();
         }
 
+        else if (Objects.equals(userInput, "3")) {
+            System.out.println(); // Line break
+            System.out.print("Digite o nome do produto: ");
+            String productNameInput = myScanner.next();
+            System.out.print("Digite a quantidade para remover: ");
+            int productQuantityInput = myScanner.nextInt();
+            if (InitializeProduct.productList.removeElement(productNameInput, productQuantityInput) == true) {
+                System.out.println("\nProduto removido com sucesso.");
+            } else {
+                System.out.println("\nProduto esgotado ou inexistente.");
+            }
+        }
+
         else if (Objects.equals(userInput, "4")) {
             System.out.println(); // Line break
             System.out.print("Digite o nome do produto: ");
             String productNameInput = myScanner.next();
             if (InitializeProduct.productList.checkIfExists(productNameInput) == true) {
-                System.out.println("O produto existe.");
+                System.out.println("\nO produto existe.");
             } else {
-                System.out.println("O produto não existe.");
+                System.out.println("\nO produto não existe.");
             }
+        }
+
+        else if (Objects.equals(userInput, "5")) {
+            System.out.println("Volte sempre!");
+            System.exit(0);
         }
     }
 }
